@@ -1,4 +1,4 @@
-A library for formatting text output into columns
+A library for formatting text output into columns.
 
 
 ## Usage
@@ -9,9 +9,17 @@ A simple usage example:
 import 'package:dolumns/dolumns.dart';
 
 main() {
-  final d = Dolumns();
+  final columns = dolumnify([
+    ['provider', '4.0.2'],
+    ['http', '0.12.0+4'],
+    ['shared_preferences', '0.5.6+1'],
+    ['sentry', '3.0.1'],
+  ]);
+  print(columns);
 }
 ```
+
+API inspired by the [columinfy](https://github.com/timoxley/columnify) npm package.
 
 ## Features and bugs
 
