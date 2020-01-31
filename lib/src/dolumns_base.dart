@@ -1,3 +1,4 @@
+/// toString() will called on every object passed in
 String dolumnify(List<List<Object>> data) {
   final columnLengths = columnMaxLengths(data);
   final lines = <String>[];
