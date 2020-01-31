@@ -2,6 +2,7 @@ name: dolumns
 description: A library for formatting text output into columns.
 version: 1.0.0
 homepage: https://github.com/maks/dolumns
+author: Maksim Lin <maks@manichord.com>
 
 environment:
   sdk: '>=2.7.0 <3.0.0'
