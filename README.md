@@ -1,5 +1,6 @@
 A library for formatting text output into columns.
 
+![Dart CI](https://github.com/maks/dolumns/workflows/Dart%20CI/badge.svg)
 
 ## Usage
 
