@@ -1,12 +1,13 @@
 /// toString() will called on every object passed in
-String dolumnify(List<List<Object>> data) {
+String dolumnify(List<List<Object>> data, {String columnSplitter}) {
   final columnLengths = columnMaxLengths(data);
+  final columnSep = columnSplitter ?? '  ';
   final lines = <String>[];
   for (final row in data) {
     final paddedItems =
         row.mapIndex((f, i) => f.toString().padRight(columnLengths[i]));
 
-    lines.add(paddedItems.join('  '));
+    lines.add(paddedItems.join(columnSep));
   }
   return lines.join('\n');
 }

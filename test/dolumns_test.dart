@@ -28,5 +28,14 @@ void main() {
       expect(columns,
           'http                0.12.0+4\nshared_preferences  0.5.6+1 \nsentry              3.0.1   ');
     });
+
+    test('custom column splitter', () {
+      final columns = dolumnify([
+        ['http', '0.12.0+4'],
+        ['shared_preferences', '0.5.6+1'],
+      ], columnSplitter: ' - ');
+      expect(columns,
+          'http               - 0.12.0+4\nshared_preferences - 0.5.6+1 ');
+    });
   });
 }
