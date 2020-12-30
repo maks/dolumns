@@ -37,6 +37,34 @@ shared_preferences | 0.5.6+1
 sentry             | 3.0.1 
 ```
 
+Columns with headers are possible with a custom header separator, provide the header in the first list item: 
+
+```dart
+import 'package:dolumns/dolumns.dart';
+
+main() {
+  final columns = dolumnify([
+    ['PACKAGES', 'VERSION'],
+    ['provider', '4.0.2'],
+    ['http', '0.12.0+4'],
+    ['shared_preferences', '0.5.6+1'],
+    ['sentry', '3.0.1'],
+  ], columnSplitter: ' | ', headerIncluded: true, headerSeparator: '=');
+  print(columns);
+}
+```
+
+will output:
+
+```
+PACKAGES           | VERSION 
+=============================
+provider           | 4.0.2   
+http               | 0.12.0+4
+shared_preferences | 0.5.6+1 
+sentry             | 3.0.1   
+```
+
 see `dolumns_example.dart` example file for full details.
 
 

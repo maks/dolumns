@@ -1,3 +1,7 @@
+## 1.2.0
+
+- header support (thanks @snorkelbuckle)
+
 ## 1.0.1+1
 
 - Improve description in pubspec
