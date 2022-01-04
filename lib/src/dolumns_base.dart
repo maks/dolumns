@@ -1,36 +1,43 @@
 /// toString() will called on every object passed in
 String dolumnify(List<List<Object>> data,
-    {String columnSplitter, bool headerIncluded = false, String headerSeparator}) {
+    {String? columnSplitter,
+    bool headerIncluded = false,
+    String? headerSeparator}) {
   final columnLengths = columnMaxLengths(data);
   final columnSep = columnSplitter ?? '  ';
   final headerSep = headerSeparator ?? ' ';
   final lines = <String>[];
   for (var index = 0; index < data.length; index++) {
-    final paddedItems = data[index].mapIndex((f, i) => f.toString().padRight(columnLengths[i]));
+    final paddedItems = data[index]
+        .mapIndex((f, i) => f.toString().padRight(columnLengths[i]!));
     lines.add(paddedItems.join(columnSep));
 
     if ((index == 0) && (headerIncluded == true)) {
-      final headerSeparatorLine = data[index]
-          .mapIndex((f, i) => headerSep.padRight(columnLengths[i], headerSep).truncate(size: columnLengths[i]));
-      final headerSeparatorJoiner = headerSep.padRight(columnSep.length, headerSep);
+      final headerSeparatorLine = data[index].mapIndex((f, i) => headerSep
+          .padRight(columnLengths[i]!, headerSep)
+          .truncate(size: columnLengths[i]!));
+      final headerSeparatorJoiner =
+          headerSep.padRight(columnSep.length, headerSep);
       lines.add(headerSeparatorLine.join(headerSeparatorJoiner));
     }
   }
   return lines.join('\n');
 }
 
-List<int> columnMaxLengths(List<List<Object>> data) {
-  if (data == null || data.isEmpty) {
+List<int?> columnMaxLengths(List<List<Object>> data) {
+  if (data.isEmpty) {
     return [];
   }
-  final maxColumnLengths = List<int>(data[0].length);
+  final maxColumnLengths =
+      List<int?>.filled(data[0].length, null, growable: false);
   for (final row in data) {
     final columnCount = row.length;
 
     for (final column in _range(columnCount)) {
       final itemLength = row[column].toString().length;
-      maxColumnLengths[column] =
-          (itemLength > (maxColumnLengths[column] ?? 0)) ? itemLength : maxColumnLengths[column] ?? 0;
+      maxColumnLengths[column] = (itemLength > (maxColumnLengths[column] ?? 0))
+          ? itemLength
+          : maxColumnLengths[column] ?? 0;
     }
   }
   return maxColumnLengths;
