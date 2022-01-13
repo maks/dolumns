@@ -1,3 +1,7 @@
+## 2.0.0
+
+- Null-safety stable release 🎉
+
 ## 2.0.0-nullsafety.0
 
 - Null-safety pre-release 🎉
