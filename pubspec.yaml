@@ -1,6 +1,6 @@
 name: dolumns
 description: A Dart library for formatting text output into columns. Useful for printing tabular data in a terminal.
-version: 2.0.0
+version: 2.0.1
 homepage: https://github.com/maks/dolumns
 
 environment:
