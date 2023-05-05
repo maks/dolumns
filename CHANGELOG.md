@@ -1,3 +1,8 @@
+## 2.0.1
+
+- Update dependencies
+- Add topics
+
 ## 2.0.0
 
 - Null-safety stable release 🎉

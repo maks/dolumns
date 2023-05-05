@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: google/dart:2.15.0
+      image: dart:2.19
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
-        run: pub get
+        run: dart pub get
       - name: Run tests
-        run: pub run test
+        run: dart test
