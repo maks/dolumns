@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: google/dart:2.19
+      image: google/dart
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
